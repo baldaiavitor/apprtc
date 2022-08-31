@@ -36,7 +36,7 @@ RUN ln -s `pwd`/apprtc/src/collider/collidermain $GOPATH/src \
     && go install collidermain
 
 # Add Collider executable to the start.sh bash script.
-RUN echo -e "$GOPATH/bin/collidermain -port=8089 -tls=true -room-server=https://rtc.djin-tech.com &\n" >> /go/start.sh
+RUN echo -e "$GOPATH/bin/collidermain -port=8089 -tls=false -room-server=http://localhost &\n" >> /go/start.sh
 
 ENV STUNNEL_VERSION 5.60
 
